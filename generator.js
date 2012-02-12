@@ -2,10 +2,21 @@ $(function(){
 
 	//canvas
 	var canvas = document.getElementById("canvas");
- 	var context = canvas.getContext("2d");	
+ 	var ctx = canvas.getContext('2d');
+	var x, y, r, g, b, opacity = opacity || .8;
 
-	context.lineWidth = 30;
-	context.strokeStyle = “#78c2c5″;
-	context.stroke();
+	canvas.width = 500;
+	canvas.height = 500;
+	
+	ctx.fillStyle = '#cacaca';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+         
+ 	for (x = 0; x < canvas.width; x++) {
+		for (y = 0; y < canvas.height; y++) {
+			number = Math.floor( Math.random() * 256 );
+			ctx.fillStyle = 'rgba(' + number + ',' + number + ',' + number + ',' + opacity + ')';
+			ctx.fillRect(x, y, 1, 1);
+ 		}
+ 	}
 
 });

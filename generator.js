@@ -19,4 +19,11 @@ $(function(){
  		}
  	}
 
+ 	var canvasb = document.getElementById("canvas-b");
+ 	var ctxb = canvasb.getContext('2d');
+	ctxb.moveTo(100, 150);
+    ctxb.lineTo(450, 50);
+    ctxb.stroke();
+
+
 });
